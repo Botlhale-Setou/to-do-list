@@ -1,106 +1,106 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Roboto', sans-serif;
-	font-size: 1.05rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.05rem;
 }
 
 body {
-	height: 100vh;
-	background-color: rgb(230, 230, 230);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  height: 100vh;
+  background-color: rgb(230, 230, 230);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 ul {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 button {
-	background-color: transparent;
-	border: none;
+  background-color: transparent;
+  border: none;
 }
 
 ::placeholder {
-	font-style: italic;
-	font-size: 1.05rem;
+  font-style: italic;
+  font-size: 1.05rem;
 }
 
 #mainContainer {
-	width: 80vw;
-	background-color: white;
-	border: 1px solid rgb(235, 235, 235);
-	box-shadow: 3px 3px 3px rgb(102, 102, 102);
+  width: 80vw;
+  background-color: white;
+  border: 1px solid rgb(235, 235, 235);
+  box-shadow: 3px 3px 3px rgb(102, 102, 102);
 }
 
 #title {
-	padding: 20px 20px;
-	border-bottom: 1px solid rgba(156, 156, 156, 0.4);
-	font-size: 1.4rem;
-	font-weight: 400;
-	display: flex;
-	justify-content: space-between;
+  padding: 20px 20px;
+  border-bottom: 1px solid rgba(156, 156, 156, 0.4);
+  font-size: 1.4rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
 }
 
 #addContainer {
-	display: flex;
-	justify-content: space-between;
-	border-bottom: 1px solid rgba(156, 156, 156, 0.4);
-	padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(156, 156, 156, 0.4);
+  padding: 10px 20px;
 }
 
 #addInput {
-	border: none;
-	height: 25px;
-	font-size: 1.05rem;
-	width: 70%;
+  border: none;
+  height: 25px;
+  font-size: 1.05rem;
+  width: 70%;
 }
 
 #clearBtn {
-	background-color: rgb(245, 245, 245);
-	height: 45px;
-	text-align: center;
-	width: 100%;
-	color: rgb(100, 100, 100);
+  background-color: rgb(245, 245, 245);
+  height: 45px;
+  text-align: center;
+  width: 100%;
+  color: rgb(100, 100, 100);
 }
 
 #todoContainer {
-	width: 100%;
+  width: 100%;
 }
 
 .task-Div {
   width: 100%;
-	border-bottom: 1px solid rgba(156, 156, 156, 0.4);
-	display: flex;
-	justify-content: space-between;
+  border-bottom: 1px solid rgba(156, 156, 156, 0.4);
+  display: flex;
+  justify-content: space-between;
 }
 
 .task-Li {
   display: flex;
-	justify-content: space-between;
-	width: 100%;
+  justify-content: space-between;
+  width: 100%;
   padding: 20px 20px;
 }
 
 .task-Div-Inner {
-	width: 70%;
+  width: 70%;
 }
 
 .task-Lbl {
-	margin-left: 20px;
+  margin-left: 20px;
 }
 
 .task-Drag {
-	width: 20px;
+  width: 20px;
 }
 
 #refreshBtn {
-	width: 20px;
+  width: 20px;
 }
 
 #addBtn {
-	width: 20px;
+  width: 20px;
 }
