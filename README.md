@@ -84,4 +84,4 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 <hr>
 
-This project is [MIT](./dist/main.js.LICENSE.txt) licensed.
+This project is [MIT](./LICENSE) licensed.
