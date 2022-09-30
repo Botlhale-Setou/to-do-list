@@ -1,7 +1,12 @@
+/* eslint-disable no-use-before-define */
+
 import './style.css';
 import refreshIcon from './artwork/refresh.png';
 import addIcon from './artwork/add.png';
 import dragIcon from './artwork/drag.png';
+import delIcon from './artwork/delete.png';
+import editIcon from './artwork/edit.png';
+import okIcon from './artwork/ok.png';
 import ToDoLibrary from './ToDoLibrary.js';
 
 const refreshBtn = document.querySelector('#refreshBtn');
@@ -19,7 +24,56 @@ const setChks = () => {
 
   for (let i = 0; i < xallChks.length; i += 1) {
     xallChks[i].addEventListener('change', () => {
-      tasks.arrToDos[i].done = !(tasks.arrToDos[i].done);
+      if (tasks.arrToDos[i].done === false) {
+        tasks.arrToDos[i].done = true;
+        xallChks[i].checked = true;
+      } else {
+        tasks.arrToDos[i].done = false;
+        xallChks[i].checked = false;
+      }
+      window.localStorage.setItem('tasks', JSON.stringify(tasks.arrToDos));
+    });
+  }
+};
+
+const setDels = () => {
+  const allDels = document.querySelectorAll('.task-Del');
+  const xallDels = Array.from(allDels);
+
+  for (let i = 0; i < xallDels.length; i += 1) {
+    xallDels[i].addEventListener('click', () => {
+      tasks.remove(i);
+      refreshList();
+    });
+  }
+};
+
+const setEdits = () => {
+  const allEdits = document.querySelectorAll('.task-Edit');
+  const allTaskEditDivs = document.querySelectorAll('.task-Edit-Div');
+  const xallEdits = Array.from(allEdits);
+  const xallTaskEditDivs = Array.from(allTaskEditDivs);
+
+  for (let i = 0; i < xallEdits.length; i += 1) {
+    xallEdits[i].addEventListener('click', () => {
+      xallTaskEditDivs[i].style.display = 'flex';
+    });
+  }
+};
+
+const setOKs = () => {
+  const allOKs = document.querySelectorAll('.task-Edit-OK');
+  const allTaskEditDivs = document.querySelectorAll('.task-Edit-Div');
+  const allTaskEditInputs = document.querySelectorAll('.task-Edit-Input');
+  const xallOKs = Array.from(allOKs);
+  const xallTaskEditDivs = Array.from(allTaskEditDivs);
+  const xallTaskEditInputs = Array.from(allTaskEditInputs);
+
+  for (let i = 0; i < xallOKs.length; i += 1) {
+    xallOKs[i].addEventListener('click', () => {
+      tasks.rename(i, xallTaskEditInputs[i].value);
+      xallTaskEditDivs[i].style.display = 'none';
+      refreshList();
     });
   }
 };
@@ -38,9 +92,18 @@ const refreshList = () => {
     const taskChk = document.createElement('input');
     const taskLbl = document.createElement('label');
     const taskDrag = new Image();
+    const taskDel = new Image();
+    const taskEditBtn = new Image();
+    const taskEditDiv = document.createElement('div');
+    const taskEditInput = document.createElement('input');
+    const taskEditOK = new Image();
 
     taskChk.setAttribute('type', 'checkbox');
     taskChk.setAttribute('id', `chk${task.index}`);
+
+    if (task.done === true) {
+      taskChk.checked = true;
+    }
 
     taskLbl.setAttribute('for', `chk${task.index}`);
     taskLbl.innerText = task.desc;
@@ -48,13 +111,32 @@ const refreshList = () => {
     taskDrag.src = dragIcon;
     taskDrag.setAttribute('alt', 'Drag');
 
+    taskDel.src = delIcon;
+    taskDel.setAttribute('alt', 'Delete');
+
+    taskEditBtn.src = editIcon;
+    taskEditBtn.setAttribute('alt', 'Edit');
+
+    taskEditOK.src = okIcon;
+    taskEditBtn.setAttribute('alt', 'OK');
+
     taskDiv.classList.add('task-Div');
     taskLi.classList.add('task-Li');
     taskDivInner.classList.add('task-Div-Inner');
     taskChk.classList.add('task-Chk');
     taskLbl.classList.add('task-Lbl');
     taskDrag.classList.add('task-Drag');
+    taskDel.classList.add('task-Del');
+    taskEditBtn.classList.add('task-Edit');
+    taskEditDiv.classList.add('task-Edit-Div');
+    taskEditInput.classList.add('task-Edit-Input');
+    taskEditOK.classList.add('task-Edit-OK');
 
+    taskDivInner.append(taskDel);
+    taskDivInner.append(taskEditBtn);
+    taskEditDiv.append(taskEditInput);
+    taskEditDiv.append(taskEditOK);
+    taskDivInner.append(taskEditDiv);
     taskDivInner.append(taskChk);
     taskDivInner.append(taskLbl);
     taskLi.append(taskDivInner);
@@ -63,7 +145,12 @@ const refreshList = () => {
 
     todoContainer.append(taskDiv);
   });
+
+  window.localStorage.setItem('tasks', JSON.stringify(tasks.arrToDos));
   setChks();
+  setDels();
+  setEdits();
+  setOKs();
 };
 
 window.addEventListener('load', () => {
@@ -83,7 +170,6 @@ addBtn.addEventListener('click', () => {
   tasks.add(addInput.value);
   addInput.value = '';
   refreshList();
-  window.localStorage.setItem('tasks', JSON.stringify(tasks.arrToDos));
 });
 
 clearBtn.addEventListener('click', () => {
@@ -98,5 +184,4 @@ clearBtn.addEventListener('click', () => {
   tasks.arrToDos = xtasks;
 
   refreshList();
-  window.localStorage.setItem('tasks', JSON.stringify(tasks.arrToDos));
 });

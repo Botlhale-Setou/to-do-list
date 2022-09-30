@@ -87,6 +87,7 @@ button {
 
 .task-Div-Inner {
   width: 70%;
+  display: flex;
 }
 
 .task-Lbl {
@@ -94,6 +95,29 @@ button {
 }
 
 .task-Drag {
+  width: 20px;
+}
+
+.task-Del {
+  width: 20px;
+  margin-right: 14px;
+}
+
+.task-Edit {
+  width: 20px;
+  margin-right: 20px;
+}
+
+.task-Edit-Div {
+  margin-right: 20px;
+  display: none;
+}
+
+.task-Edit-Input {
+  margin-right: 10px;
+}
+
+.task-Edit-OK {
   width: 20px;
 }
 

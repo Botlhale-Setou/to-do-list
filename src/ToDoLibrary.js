@@ -11,5 +11,9 @@ export default class ToDoLibrary {
 
   remove = (ix) => {
     this.arrToDos.splice(ix, 1);
-  }
+  };
+
+  rename = (pos, newName) => {
+    this.arrToDos[pos].desc = newName;
+  };
 }
