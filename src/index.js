@@ -26,8 +26,12 @@ const setChks = () => {
 
 const refreshList = () => {
   todoContainer.innerHTML = '';
+  let c = 0;
 
   tasks.arrToDos.forEach((task) => {
+    task.index = c;
+    c += 1;
+
     const taskDiv = document.createElement('div');
     const taskLi = document.createElement('li');
     const taskDivInner = document.createElement('div');
@@ -65,6 +69,13 @@ const refreshList = () => {
 window.addEventListener('load', () => {
   refreshBtn.src = refreshIcon;
   addBt.src = addIcon;
+
+  const localStorageItem = window.localStorage.getItem('tasks');
+
+  if (localStorageItem) {
+    tasks.arrToDos = JSON.parse(localStorageItem);
+  }
+
   refreshList();
 });
 
@@ -72,13 +83,20 @@ addBtn.addEventListener('click', () => {
   tasks.add(addInput.value);
   addInput.value = '';
   refreshList();
+  window.localStorage.setItem('tasks', JSON.stringify(tasks.arrToDos));
 });
 
 clearBtn.addEventListener('click', () => {
+  const xtasks = [];
+
   for (let i = 0; i < tasks.arrToDos.length; i += 1) {
-    if (tasks.arrToDos[i].done === true) {
-      tasks.remove(i);
+    if (tasks.arrToDos[i].done === false) {
+      xtasks.push(tasks.arrToDos[i]);
     }
   }
+
+  tasks.arrToDos = xtasks;
+
   refreshList();
+  window.localStorage.setItem('tasks', JSON.stringify(tasks.arrToDos));
 });
