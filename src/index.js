@@ -2,34 +2,32 @@ import './style.css';
 import refreshIcon from './artwork/refresh.png';
 import addIcon from './artwork/add.png';
 import dragIcon from './artwork/drag.png';
+import ToDoLibrary from './ToDoLibrary.js';
 
 const refreshBtn = document.querySelector('#refreshBtn');
 const addBtn = document.querySelector('#addBtn');
-
-const tasks = [
-  {
-    index: 1,
-    desc: 'Task 1 description',
-    done: false,
-  },
-  {
-    index: 2,
-    desc: 'Task 2 description',
-    done: false,
-  },
-  {
-    index: 3,
-    desc: 'Task 3 description',
-    done: false,
-  },
-];
-
+const addBt = document.querySelector('#addBt');
+const addInput = document.querySelector('#addInput');
 const todoContainer = document.querySelector('#todoContainer');
+const clearBtn = document.querySelector('#clearBtn');
+
+const tasks = new ToDoLibrary();
+
+const setChks = () => {
+  const allChks = document.querySelectorAll('.task-Chk');
+  const xallChks = Array.from(allChks);
+
+  for (let i = 0; i < xallChks.length; i += 1) {
+    xallChks[i].addEventListener('change', () => {
+      tasks.arrToDos[i].done = !(tasks.arrToDos[i].done);
+    });
+  }
+};
 
 const refreshList = () => {
   todoContainer.innerHTML = '';
 
-  tasks.forEach((task) => {
+  tasks.arrToDos.forEach((task) => {
     const taskDiv = document.createElement('div');
     const taskLi = document.createElement('li');
     const taskDivInner = document.createElement('div');
@@ -61,10 +59,26 @@ const refreshList = () => {
 
     todoContainer.append(taskDiv);
   });
+  setChks();
 };
 
 window.addEventListener('load', () => {
   refreshBtn.src = refreshIcon;
-  addBtn.src = addIcon;
+  addBt.src = addIcon;
+  refreshList();
+});
+
+addBtn.addEventListener('click', () => {
+  tasks.add(addInput.value);
+  addInput.value = '';
+  refreshList();
+});
+
+clearBtn.addEventListener('click', () => {
+  for (let i = 0; i < tasks.arrToDos.length; i += 1) {
+    if (tasks.arrToDos[i].done === true) {
+      tasks.remove(i);
+    }
+  }
   refreshList();
 });
