@@ -8,6 +8,7 @@ import delIcon from './artwork/delete.png';
 import editIcon from './artwork/edit.png';
 import okIcon from './artwork/ok.png';
 import ToDoLibrary from './ToDoLibrary.js';
+import { setChks } from './interaction.js';
 
 const refreshBtn = document.querySelector('#refreshBtn');
 const addBtn = document.querySelector('#addBtn');
@@ -17,24 +18,6 @@ const todoContainer = document.querySelector('#todoContainer');
 const clearBtn = document.querySelector('#clearBtn');
 
 const tasks = new ToDoLibrary();
-
-const setChks = () => {
-  const allChks = document.querySelectorAll('.task-Chk');
-  const xallChks = Array.from(allChks);
-
-  for (let i = 0; i < xallChks.length; i += 1) {
-    xallChks[i].addEventListener('change', () => {
-      if (tasks.arrToDos[i].done === false) {
-        tasks.arrToDos[i].done = true;
-        xallChks[i].checked = true;
-      } else {
-        tasks.arrToDos[i].done = false;
-        xallChks[i].checked = false;
-      }
-      window.localStorage.setItem('tasks', JSON.stringify(tasks.arrToDos));
-    });
-  }
-};
 
 const setDels = () => {
   const allDels = document.querySelectorAll('.task-Del');
@@ -147,7 +130,7 @@ const refreshList = () => {
   });
 
   window.localStorage.setItem('tasks', JSON.stringify(tasks.arrToDos));
-  setChks();
+  setChks(tasks);
   setDels();
   setEdits();
   setOKs();
