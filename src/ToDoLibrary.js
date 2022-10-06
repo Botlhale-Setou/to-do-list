@@ -1,6 +1,6 @@
-import ToDo from './ToDo.js';
+const { ToDo } = require('./ToDo.js');
 
-export default class ToDoLibrary {
+class ToDoLibrary {
   arrToDos = [];
 
   add = (dn) => {
@@ -17,3 +17,5 @@ export default class ToDoLibrary {
     this.arrToDos[pos].desc = newName;
   };
 }
+
+exports.ToDoLibrary = ToDoLibrary;
