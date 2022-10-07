@@ -16,6 +16,24 @@ class ToDoLibrary {
   rename = (pos, newName) => {
     this.arrToDos[pos].desc = newName;
   };
+
+  toggleChk = (ix) => {
+    if (this.arrToDos[ix].done === true) {
+      this.arrToDos[ix].done = false;
+    } else {
+      this.arrToDos[ix].done = true;
+    }
+  }
+
+  clearAll = () => {
+    const x = [];
+    for (let i = 0; i < this.arrToDos.length; i += 1) {
+      if (this.arrToDos[i].done === false) {
+        x.push(this.arrToDos[i]);
+      }
+    }
+    this.arrToDos = x;
+  }
 }
 
 exports.ToDoLibrary = ToDoLibrary;

@@ -8,7 +8,8 @@ import delIcon from './artwork/delete.png';
 import editIcon from './artwork/edit.png';
 import okIcon from './artwork/ok.png';
 import ToDoLibrary from './ToDoLibrary.js';
-import { setChks } from './interaction.js';
+
+const setChks = require('./interaction.js');
 
 const refreshBtn = document.querySelector('#refreshBtn');
 const addBtn = document.querySelector('#addBtn');
