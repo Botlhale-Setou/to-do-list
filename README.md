@@ -17,6 +17,8 @@ to-do list version 1.0.0
 
 > Javascript
 
+> Jest
+
 > Webpack
 >> HTMLWebpackPlugin<br>
 >> WebpackDevServer<br>
