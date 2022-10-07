@@ -23,3 +23,18 @@ describe('Add/Remove/Rename functions testing', () => {
     expect(x.arrToDos).toEqual(desired);
   });
 });
+
+describe('if task is done & clearAll', () => {
+  test('if task is done', () => {
+    x.arrToDos = [{ done: false }, { done: false }, { done: false }];
+    x.toggleChk(1);
+    expect(x.arrToDos[1].done).toBeTruthy();
+  });
+
+  test('if all done are cleared', () => {
+    x.arrToDos = [{ done: true }, { done: true }, { done: false }, { done: false }];
+    const desired = [{ done: false }, { done: false }];
+    x.clearAll();
+    expect(x.arrToDos).toEqual(desired);
+  });
+});

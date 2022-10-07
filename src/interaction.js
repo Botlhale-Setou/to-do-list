@@ -17,4 +17,4 @@ const setChks = (tasks) => {
   }
 };
 
-export { setChks };
+exports.setChks = setChks;
