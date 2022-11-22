@@ -17,4 +17,4 @@ const setChks = (tasks) => {
   }
 };
 
-exports.setChks = setChks;
+module.exports = setChks;

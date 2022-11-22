@@ -1,4 +1,4 @@
-const { ToDo } = require('./ToDo.js');
+const ToDo = require('./ToDo.js');
 
 class ToDoLibrary {
   arrToDos = [];
@@ -36,4 +36,4 @@ class ToDoLibrary {
   }
 }
 
-exports.ToDoLibrary = ToDoLibrary;
+module.exports = ToDoLibrary;
