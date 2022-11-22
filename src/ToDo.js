@@ -6,4 +6,4 @@ class ToDo {
   }
 }
 
-exports.ToDo = ToDo;
+module.exports = ToDo;
