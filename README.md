@@ -1,87 +1,99 @@
-<br><br><br>
+<a name="readme-top"></a>
 
-# To-Do List
+<!-- TABLE OF CONTENTS -->
 
-to-do list version 1.0.0
-> list structure
+# 📗 Table of Contents
 
-<br>
-<br>
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+- [👥 Authors](#authors)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [📝 License](#license)
 
-## Built With
-<hr><br>
+<!-- PROJECT DESCRIPTION -->
 
-> GitBash
+# 📖 To-Do List <a name="about-project"></a>
 
-> HTML/CSS
+**To-Do List** is a simple to-do list app that saves data even while offline.
 
-> Javascript
+## 🛠 Built With <a name="built-with"></a>
+- JavaScript
+- Webpack
+- HTML/CSS
 
-> Webpack
->> HTMLWebpackPlugin<br>
->> WebpackDevServer<br>
->> CSS Loader<br>
->> Style Loader
+<!-- LIVE DEMO -->
 
+## 🚀 Live Demo <a name="live-demo"></a>
 
-<br><br>
+- [Live Demo Link](https://yourdeployedapplicationlink.com) currently unavailable.
 
-## Live Demo (if available)
-<hr>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Click [here](https://livedemo.com) to view live demo link.
-<br><br>
+<!-- GETTING STARTED -->
 
-## Setup
-<hr>
+## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps:
-1. **Click "Code" button**
-2. Select HTTPS clone method and [**copy Repo URL**](https://github.com/Botlhale-Setou/to-do-list.git)
-3. **Open Git Bash** (or other terminal) and **enter "cd [Local Workstation Path]"**
-4. **Enter "git clone [Repo URL](https://github.com/Botlhale-Setou/to-do-list.git)"**
-5. **Enter "git checkout -b [New-Branch-Name]"**
-<br><br><br>
-## Usage
-<hr>
-A simple to-do list web application to help track tasks.
-<br><br>
+1. Click **"Code"** button
+2. Copy [**clone link**](https://github.com/Botlhale-Setou/to-do-list.git)
+3. Open **Git Bash** or other terminal.
+4. Navigate to desired projects folder.
+5. Enter 
+	```javascript
+	git clone https://github.com/Botlhale-Setou/to-do-list.git
+	```
 
-## Run tests
-Linters.
-<br>
+6. Enter 
+	```javascript
+	cd to-do-list
+	```
 
-## Deployment
-Mobile and desktop browsers
-<br><br><br>
+7. Enter 
+	```javascript
+	npm run start
+	```
 
-## Authors
-<hr><br>
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
 
 👤 **Botlhale Setou**
-
 - GitHub: [@Botlhale-Setou](https://github.com/Botlhale-Setou)
-- Twitter: [@Botlhale_Setou](https://twitter.com/Botlhale_Setou)
 - LinkedIn: [@botlhalesetou](https://www.linkedin.com/in/botlhalesetou/)
-<br><br><br>
+- Twitter: [@Botlhale_Setou](https://twitter.com/Botlhale_Setou)
 
-## 🤝 Contributing
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/Botlhale-Setou/to-do-list/issues).
-<br><br>
-## Show your support
 
-Give a ⭐️ if you like this project!
-<br><br>
-## Acknowledgments
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-<br><br><br>
-## 📝 License
-<hr>
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project give it a star!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
