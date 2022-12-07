@@ -24,7 +24,6 @@
 - Webpack
 - HTML/CSS
 
-
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
