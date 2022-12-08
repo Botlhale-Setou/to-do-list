@@ -1,6 +1,6 @@
-import ToDo from './ToDo.js';
+const ToDo = require('./ToDo.js');
 
-export default class ToDoLibrary {
+class ToDoLibrary {
   arrToDos = [];
 
   add = (dn) => {
@@ -16,4 +16,24 @@ export default class ToDoLibrary {
   rename = (pos, newName) => {
     this.arrToDos[pos].description = newName;
   };
+
+  toggleChk = (ix) => {
+    if (this.arrToDos[ix].done === true) {
+      this.arrToDos[ix].done = false;
+    } else {
+      this.arrToDos[ix].done = true;
+    }
+  }
+
+  clearAll = () => {
+    const x = [];
+    for (let i = 0; i < this.arrToDos.length; i += 1) {
+      if (this.arrToDos[i].done === false) {
+        x.push(this.arrToDos[i]);
+      }
+    }
+    this.arrToDos = x;
+  }
 }
+
+module.exports = ToDoLibrary;

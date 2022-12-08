@@ -9,6 +9,8 @@ import editIcon from './artwork/edit.png';
 import okIcon from './artwork/ok.png';
 import ToDoLibrary from './ToDoLibrary.js';
 
+const setChks = require('./interaction.js');
+
 const refreshBtn = document.querySelector('#refreshBtn');
 const addBtn = document.querySelector('#addBtn');
 const addBt = document.querySelector('#addBt');
@@ -147,7 +149,7 @@ const refreshList = () => {
   });
 
   window.localStorage.setItem('tasks', JSON.stringify(tasks.arrToDos));
-  setChks();
+  setChks(tasks);
   setDels();
   setEdits();
   setOKs();
