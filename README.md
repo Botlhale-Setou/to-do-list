@@ -28,7 +28,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com) currently unavailable.
+- [Click here](https://botlhale-setou.github.io/to-do-list/dist/) to view live demo.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
