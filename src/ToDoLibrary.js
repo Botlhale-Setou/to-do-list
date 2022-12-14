@@ -4,8 +4,8 @@ class ToDoLibrary {
   arrToDos = [];
 
   add = (dn) => {
-    const xtodo = new ToDo(this.arrToDos.length);
-    xtodo.desc = dn;
+    const xtodo = new ToDo(this.arrToDos.length + 1);
+    xtodo.description = dn;
     this.arrToDos.push(xtodo);
   };
 
@@ -14,7 +14,7 @@ class ToDoLibrary {
   };
 
   rename = (pos, newName) => {
-    this.arrToDos[pos].desc = newName;
+    this.arrToDos[pos].description = newName;
   };
 
   toggleChk = (ix) => {

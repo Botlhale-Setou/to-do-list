@@ -20,6 +20,24 @@ const clearBtn = document.querySelector('#clearBtn');
 
 const tasks = new ToDoLibrary();
 
+const setChks = () => {
+  const allChks = document.querySelectorAll('.task-Chk');
+  const xallChks = Array.from(allChks);
+
+  for (let i = 0; i < xallChks.length; i += 1) {
+    xallChks[i].addEventListener('change', () => {
+      if (tasks.arrToDos[i].completed === false) {
+        tasks.arrToDos[i].completed = true;
+        xallChks[i].checked = true;
+      } else {
+        tasks.arrToDos[i].completed = false;
+        xallChks[i].checked = false;
+      }
+      window.localStorage.setItem('tasks', JSON.stringify(tasks.arrToDos));
+    });
+  }
+};
+
 const setDels = () => {
   const allDels = document.querySelectorAll('.task-Del');
   const xallDels = Array.from(allDels);
@@ -85,12 +103,12 @@ const refreshList = () => {
     taskChk.setAttribute('type', 'checkbox');
     taskChk.setAttribute('id', `chk${task.index}`);
 
-    if (task.done === true) {
+    if (task.completed === true) {
       taskChk.checked = true;
     }
 
     taskLbl.setAttribute('for', `chk${task.index}`);
-    taskLbl.innerText = task.desc;
+    taskLbl.innerText = task.description;
 
     taskDrag.src = dragIcon;
     taskDrag.setAttribute('alt', 'Drag');
@@ -160,7 +178,7 @@ clearBtn.addEventListener('click', () => {
   const xtasks = [];
 
   for (let i = 0; i < tasks.arrToDos.length; i += 1) {
-    if (tasks.arrToDos[i].done === false) {
+    if (tasks.arrToDos[i].completed === false) {
       xtasks.push(tasks.arrToDos[i]);
     }
   }
