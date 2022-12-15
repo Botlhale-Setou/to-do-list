@@ -4,8 +4,11 @@ const x = new ToDoLibrary();
 
 describe('Add/Remove/Rename functions testing', () => {
   test('if add() adds an item', () => {
+    //Arrange
     const currNo = x.arrToDos.length;
+    //Act
     x.add('Example task description');
+    //Assert
     expect(x.arrToDos.length).toBe(currNo + 1);
   });
 
